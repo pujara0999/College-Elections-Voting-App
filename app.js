@@ -1,5 +1,6 @@
 //jshint esversion:6
 
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -337,7 +338,10 @@ app.post("/reset", function (req, res) {
     })
     return
 })
+const port = process.env.PORT || 8000;
 
-app.listen(5000, function (req, res) {
-    console.log("Server Started on Port 3000")
+
+app.listen(port, () => {
+    console.log(`app is running at port ${port}`);
 })
+
