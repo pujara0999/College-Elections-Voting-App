@@ -15,11 +15,14 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(express.static("public"));
-mongoose.connect("ENTER MONGODB SRV LINK HERE", {
+mongoose.connect("mongodb+srv://pramit99:pujara8658@cluster0.tgd0x.mongodb.net/vote?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false
+}).then(() => {
+    console.log("DB CONNECTED");
 })
+
 
 const voterSchema = {
     email: String,
